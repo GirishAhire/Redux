@@ -1,20 +1,31 @@
-import { createStore, applyMiddleware } from 'redux';
 
+import { createStore, applyMiddleware, combineReducers } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
-import logger from 'redux-logger'
+import thunk from 'redux-thunk';
+import logger from 'redux-logger';
 
-// import thunkMiddleware from 'redux-thunk';
-
-import reducer from './CountReducer.jsx'
-
-// import reducer from '../user_redux/UserReducer';
+import countReducer from './CountReducer';
+import userReducer from '../user_redux/UserReducer';
 
 
 // export const store = createStore(reducer,applyMiddleware(logger))
 
-export const store = createStore(reducer,composeWithDevTools(applyMiddleware(logger)))
+// export const store = createStore(reducer,composeWithDevTools(applyMiddleware(logger)))
 
 // export const store = createStore(reducer, composeWithDevTools(applyMiddleware(logger, thunkMiddleware)))
 
 
+const rootReducer = combineReducers({
+  count: countReducer,
+  users: userReducer,
+});
+
+const middleware = [logger, thunk];
+
+const store = createStore(
+  rootReducer,
+  composeWithDevTools(applyMiddleware(...middleware))
+);
+
+export default store;

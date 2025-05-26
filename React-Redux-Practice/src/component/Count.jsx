@@ -30,8 +30,7 @@ function Count(props) {
 
 const mapStateToProps = (state) => {
     return {
-        
-        numOfCounts: state.numberOfCounts
+        numOfCounts: state.count.numberOfCounts
     };
 };
 

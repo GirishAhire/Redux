@@ -31,7 +31,10 @@ const reducer = (state = initialState, action) => {
                 loading: false,
                 users: [],
                 error: action.payload
+
             }
+        default:
+            return state;
     }
 }
 

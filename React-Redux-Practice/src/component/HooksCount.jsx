@@ -7,7 +7,7 @@ import { incrementCount, decrementCount } from '../redux/count_redux/CountAction
 
 function HooksCount() {
 
-    const count = useSelector((state) => state.numberOfCounts)
+    const count = useSelector((state) => state.count.numberOfCounts)
     const dispatch = useDispatch()
     
     const increment_Btn = () => {
