@@ -1,0 +1,65 @@
+/* Centered container */
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f7fa;
+  min-height: 100vh;
+}
+
+/* Stylish primary button */
+.button {
+  background: linear-gradient(45deg, #6a11cb, #2575fc);
+  border: none;
+  border-radius: 8px;
+  color: white;
+  padding: 12px 28px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 15px rgba(37, 117, 252, 0.4);
+  margin: 0 10px;
+}
+
+.button:hover {
+  background: linear-gradient(45deg, #2575fc, #6a11cb);
+  transform: scale(1.05);
+}
+
+.button:active {
+  transform: scale(0.95);
+  box-shadow: none;
+}
+
+/* Rounded outline button */
+.button-outline {
+  background: transparent;
+  border: 2px solid #2575fc;
+  border-radius: 30px;
+  color: #2575fc;
+  padding: 10px 24px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 0 10px;
+}
+
+.button-outline:hover {
+  background-color: #2575fc;
+  color: white;
+}
+
+/* Remove default outline and set font for buttons */
+button {
+  outline: none;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Optional: style the heading */
+h1 {
+  color: #333;
+  margin-bottom: 1.5rem;
+}
